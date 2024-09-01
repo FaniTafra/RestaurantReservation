@@ -1,4 +1,4 @@
-package com.fani.RestaurantReservation;
+package com.fani;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
