@@ -17,10 +17,10 @@ public class Reservation {
     @Column(name = "ReservationDate", nullable = false)
     private LocalDateTime reservationDate;
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "User_id")
     private User user;
     @ManyToOne
-    @JoinColumn(name = "restaurant_id")
+    @JoinColumn(name = "Restaurant_id")
     private Restaurant restaurant;
 
     public void setId(int id) {
