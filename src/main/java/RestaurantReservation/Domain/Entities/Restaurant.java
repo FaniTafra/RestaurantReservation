@@ -10,8 +10,9 @@ public class Restaurant {
     private int id;
     @Column(name = "Name", nullable = false, length = 100)
     private String name;
-    @Column(name = "AvailableTables", nullable = false)
-    private int availableTables;
+    @OneToOne
+    @JoinColumn(name = "RestaurantAdmin_id")
+    private User restaurantAdmin;
 
     public void setId(int id) {
         this.id = id;
@@ -29,11 +30,11 @@ public class Restaurant {
         this.name = name;
     }
 
-    public int getAvailableTables() {
-        return availableTables;
+    public User getRestaurantAdmin() {
+        return restaurantAdmin;
     }
 
-    public void setAvailableTables(int availableTables) {
-        this.availableTables = availableTables;
+    public void setRestaurantAdmin(User restaurantAdmin) {
+        this.restaurantAdmin = restaurantAdmin;
     }
 }

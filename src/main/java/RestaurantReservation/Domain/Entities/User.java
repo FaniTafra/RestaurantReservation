@@ -1,5 +1,6 @@
 package RestaurantReservation.Domain.Entities;
 
+import RestaurantReservation.Domain.Enums.UserRole;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,8 +15,12 @@ public class User {
     private String lastName;
     @Column(name = "Email", nullable = false, length = 100)
     private String email;
+    @Column(name = "Password", length = 200)
+    private String password;
     @Column(name = "PhoneNumber", nullable = false, length = 15)
     private String phoneNumber;
+    @Column(name = "Role")
+    private UserRole userRole;
 
     public int getId() {
         return Id;
@@ -55,5 +60,21 @@ public class User {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public UserRole getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
