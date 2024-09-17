@@ -27,7 +27,7 @@ public class UserController {
         this.service.createUser(user);
     }
 
-    @PutMapping("/updateUser")
+    @PutMapping("/update")
     public void update(@RequestBody User user){
         this.service.editUser(user);
     }
