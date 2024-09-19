@@ -2,6 +2,7 @@ package RestaurantReservation.API.Controllers;
 
 import RestaurantReservation.Application.Services.IRestaurantService;
 import RestaurantReservation.Domain.Entities.Restaurant;
+import RestaurantReservation.Domain.Entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +19,7 @@ public class RestaurantController {
         this.service = service;
     }
 
-    @GetMapping("/get")
+    @GetMapping("/getAll")
     public List<Restaurant> get() {
         return this.service.get();
     }
@@ -27,5 +28,20 @@ public class RestaurantController {
     public void create(@RequestBody Restaurant restaurant)
     {
         this.service.createRestaurant(restaurant);
+    }
+
+    @PutMapping("/update")
+    public void update(@RequestBody Restaurant restaurant){
+        this.service.editRestaurant(restaurant);
+    }
+
+    @GetMapping("/get/{id}")
+    public Restaurant get(@PathVariable("id") Integer id){
+        return this.service.getRestaurant(id);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable("id") Integer id){
+        this.service.deleteRestaurant(id);
     }
 }

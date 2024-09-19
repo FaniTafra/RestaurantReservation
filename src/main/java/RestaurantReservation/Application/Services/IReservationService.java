@@ -10,4 +10,6 @@ import java.util.List;
 public interface IReservationService {
     List<Reservation> get();
     void createReservation(Reservation reservation);
+    Reservation getReservation(Integer id);
+    void deleteReservation(Integer id);
 }
